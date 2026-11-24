@@ -1,5 +1,7 @@
 # MailVault
 
+> **Built with the help of AI.** MailVault was designed and written with an AI assistant. The author tested it on real mail archives before releasing it.
+
 ![MailVault](docs/screenshots/02-inbox.png)
 
 A viewer, converter and recovery tool for **PST, OST, MSG, EML, EMLX and MBOX** files, with an Outlook classic-style interface: ribbon, folder pane, message list and reading pane. Your mail is laid out like a mail program, one entry per email account with **Inbox, Drafts, Sent Items, Deleted Items, Archive, Junk Email** and your own folders, even when it comes from thousands of loose .msg files.
@@ -13,8 +15,6 @@ The same engine and interface ship three ways:
 | Docker web UI | Runs on your server, opened in a browser | `docker compose up -d` |
 
 See all screenshots in [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md).
-
-Designed with AI help.
 
 ## Your mail, sorted like a mail program
 
