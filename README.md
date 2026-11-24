@@ -129,6 +129,7 @@ The version number lives in `mailvault/__init__.py`, `pyproject.toml`, `packagin
 ## Tests
 
 ```bash
+pip install -r requirements.txt httpx2   # httpx2 is only needed by the tests
 python tests/make_fixtures.py   # sample PST (with damaged, orphaned, deleted, calendar, contact, task and note items), MSG/EML/MBOX/Gmail/ZIP and invites
 python tests/test_core.py
 python tests/test_server.py     # starts the real server and checks the API end to end
