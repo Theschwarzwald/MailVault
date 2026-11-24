@@ -1,0 +1,61 @@
+name: build
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - run: python tests/make_fixtures.py && python tests/test_core.py && python tests/test_server.py && python tests/test_library.py && python tests/test_invites.py && python tests/test_collection.py && python tests/test_desktop_mail.py && python -m mailvault convert tests/fixtures/archive2019.pst --to pst --out ci.pst && python tests/validate_pst.py ci.pst && python -m mailvault convert tests/fixtures/archive2019.pst --to pst-ansi --out ci-ansi.pst && python tests/validate_pst.py ci-ansi.pst
+  desktop:
+    needs: test
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libgirepository1.0-dev libwebkit2gtk-4.1-dev gir1.2-webkit2-4.1
+      - run: pip install -r requirements-desktop.txt
+      - if: runner.os == 'Linux'
+        run: pip install pygobject==3.48.2
+      - run: pyinstaller --noconfirm packaging/mailvault.spec
+      - if: runner.os == 'Windows'
+        run: choco install innosetup -y && iscc packaging\installer.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MailVault-${{ runner.os }}
+          path: |
+            dist/MailVault*
+            packaging/Output/*.exe
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions: {packages: write, contents: read}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with: {registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}"}
+      - run: |
+          IMG=ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/mailvault
+          docker build -t $IMG:latest -t $IMG:${GITHUB_REF_NAME#v} .
+          docker push --all-tags $IMG   # also the image the Nextcloud ExApp deploys
+  nextcloud:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "20"}
+      - run: cd nextcloud/mailvault && npm install && npm run build   # compiled Files action
+      - run: sh nextcloud/build.sh && mv nextcloud/mailvault-nextcloud.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with: {name: MailVault-Nextcloud, path: mailvault-nextcloud.tar.gz}
