@@ -36,18 +36,6 @@ jobs:
           path: |
             dist/MailVault*
             packaging/Output/*.exe
-  docker:
-    needs: test
-    runs-on: ubuntu-latest
-    permissions: {packages: write, contents: read}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/login-action@v3
-        with: {registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}"}
-      - run: |
-          IMG=ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/mailvault
-          docker build -t $IMG:latest -t $IMG:${GITHUB_REF_NAME#v} .
-          docker push --all-tags $IMG   # also the image the Nextcloud ExApp deploys
   nextcloud:
     needs: test
     runs-on: ubuntu-latest

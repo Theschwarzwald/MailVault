@@ -86,7 +86,7 @@ Needs Nextcloud 29–35.
 Nextcloud pulls and runs the MailVault container itself; there's no engine URL or token to set.
 
 1. Set up AppAPI with a deploy daemon (Administration settings → AppAPI).
-2. Push the image (the GitHub workflow publishes `ghcr.io/<owner>/mailvault`) and set `<image>` in `nextcloud/exapp/appinfo/info.xml` to match.
+2. Build the engine image (`docker build -t <registry>/mailvault .`), push it to a registry your deploy daemon can reach, and set `<image>` in `nextcloud/exapp/appinfo/info.xml` to match.
 3. Register it:
    ```bash
    occ app_api:app:register mailvault <daemon> --info-xml /path/to/nextcloud/exapp/appinfo/info.xml
@@ -122,7 +122,7 @@ python -m mailvault serve --data /mail --port 8080
 - **Windows installer:** `pip install -r requirements-desktop.txt`, then `pyinstaller --noconfirm packaging/mailvault.spec` and `iscc packaging\installer.iss` (Inno Setup 6).
 - **Nextcloud app:** `cd nextcloud/mailvault && npm install && npm run build`, then `sh nextcloud/build.sh`.
 - **Engine image:** `docker build -t mailvault .`
-- Pushing a `v*` tag runs `.github/workflows/build.yml`, which tests everything and builds all of the above.
+- Pushing a `v*` tag runs `.github/workflows/build.yml`, which tests everything and builds the Windows, macOS and Linux apps and the Nextcloud app. The engine image is built by hand.
 
 The version number lives in `mailvault/__init__.py`, `pyproject.toml`, `packaging/installer.iss` and the two `appinfo/info.xml` files.
 
