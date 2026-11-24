@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>mailvault</id>
+    <name>MailVault</name>
+    <summary>View, convert and recover PST, OST, MSG, EML and MBOX files</summary>
+    <description><![CDATA[Outlook classic style viewer for mail archives, deployed and managed by Nextcloud AppAPI.
+Open mail files straight from Files, browse mail, calendar, contacts, tasks and notes, export to PDF, EML, MSG, MBOX,
+ICS, VCF and more, and recover damaged, orphaned and deleted items.]]></description>
+    <version>2.9.0</version>
+    <licence>MIT</licence>
+    <author>MailVault</author>
+    <namespace>MailVault</namespace>
+    <category>files</category>
+    <category>tools</category>
+    <dependencies>
+        <nextcloud min-version="30" max-version="33"/>
+    </dependencies>
+    <external-app>
+        <docker-install>
+            <registry>ghcr.io</registry>
+            <image>YOUR_GITHUB_USER/mailvault</image>
+            <image-tag>2.9.0</image-tag>
+        </docker-install>
+        <routes>
+            <route>
+                <url>^(api|static|nc)\/.*</url>
+                <verb>GET,POST,PUT,DELETE</verb>
+                <access_level>USER</access_level>
+                <headers_to_exclude>[]</headers_to_exclude>
+            </route>
+            <route>
+                <url>^$</url>
+                <verb>GET</verb>
+                <access_level>USER</access_level>
+                <headers_to_exclude>[]</headers_to_exclude>
+            </route>
+            <route>
+                <url>^(js|css|img)\/.*</url>
+                <verb>GET</verb>
+                <access_level>PUBLIC</access_level>
+                <headers_to_exclude>[]</headers_to_exclude>
+            </route>
+        </routes>
+    </external-app>
+</info>

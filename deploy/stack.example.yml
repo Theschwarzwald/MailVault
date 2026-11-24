@@ -1,0 +1,41 @@
+# Example: the MailVault engine next to a Nextcloud server (Docker Compose, Portainer, …).
+# Copy this file to deploy/stack.yml and change the paths and network name to match your setup.
+#
+# The engine joins Nextcloud's Docker network, so the Nextcloud app reaches it at
+# http://mailvault:8080. No port is published: only Nextcloud talks to it.
+# Set MAILVAULT_TOKEN (shared with the Nextcloud app's admin settings) and MAILVAULT_PASSWORD
+# as environment variables, for example in a .env file next to this one.
+services:
+  mailvault:
+    image: mailvault:2.9.0               # docker build -t mailvault:2.9.0 .
+    container_name: mailvault
+    restart: unless-stopped
+    environment:
+      MAILVAULT_TOKEN: ${MAILVAULT_TOKEN}
+      # Blocks anonymous browser sessions; only Nextcloud (with the token) gets in.
+      MAILVAULT_PASSWORD: ${MAILVAULT_PASSWORD}
+      MAILVAULT_MAX_UPLOAD_MB: "20480"
+      # No server folders: nobody can browse the host's disks from MailVault.
+      # The mounts below are only for reading files that are in users' mapped Nextcloud folders.
+      MAILVAULT_LIBRARY_ALLOW: "/srv/no-server-folders"
+      MAILVAULT_ROOTS: ""
+      TZ: UTC
+    volumes:
+      - mailvault-data:/data                # search indexes and sorted mail, kept between restarts
+      - mailvault-uploads:/tmp/mailvault    # files opened from Nextcloud (disk, not RAM)
+      # Optional: read mail files in place instead of copying them. Mount Nextcloud's data
+      # directory (and any external storage) read-only, then set the matching path map in
+      # Nextcloud > Administration > MailVault (for example /var/www/html/data=/ncdata).
+      - /path/to/nextcloud/data:/ncdata:ro
+      - /path/to/external/storage:/external:ro
+    group_add:
+      - "33"                                # www-data, owner of the Nextcloud data directory
+    networks:
+      - nextcloud
+networks:
+  nextcloud:
+    name: nextcloud_default                 # the Docker network your Nextcloud containers use
+    external: true
+volumes:
+  mailvault-data:
+  mailvault-uploads:

@@ -1,0 +1,6 @@
+starlette>=0.37
+uvicorn>=0.29
+reportlab>=4.0
+py7zr>=0.21        # optional: .7z archives
+rarfile>=4.2       # optional: .rar archives (needs unrar or bsdtar)
+tzdata>=2024.1     # time zones for calendar invites on Windows

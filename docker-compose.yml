@@ -1,0 +1,23 @@
+services:
+  mailvault:
+    build: .
+    image: mailvault:latest
+    container_name: mailvault
+    ports:
+      - "8080:8080"
+    volumes:
+      - /path/to/your/mail/files:/mail:ro     # PST/MSG/EML/MBOX/archives to browse
+      # Any number of server folders: mount each one, then add it with "Add folder" in MailVault
+      - /srv/mail-archives:/archives:ro
+      - /srv/legal-holds:/legal:ro
+      - mailvault-data:/data                  # search indexes (instant re-open)
+    environment:
+      MAILVAULT_PASSWORD: "change-me"         # browser login (any username)
+      MAILVAULT_TOKEN: "long-random-secret"   # shared with the Nextcloud app, if you use it
+      MAILVAULT_MAX_UPLOAD_MB: "20480"
+      MAILVAULT_LIBRARY_ALLOW: "/mail:/archives:/legal"   # where "Add folder" may point (":"-separated)
+    tmpfs:
+      - /tmp/mailvault:size=20g
+    restart: unless-stopped
+volumes:
+  mailvault-data:

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Build output (published as release files, not kept in the repo)
+build/
+dist/
+packaging/Output/
+nextcloud/*.tar.gz
+*.tar.gz
+*.exe
+*.zip
+!tests/fixtures/*.zip
+
+# Test files, made by tests/make_fixtures.py
+tests/fixtures/
+ci.pst
+ci-ansi.pst
+
+# Node
+node_modules/
+
+# Your own deployment (copy deploy/stack.example.yml to deploy/stack.yml)
+deploy/stack.yml
+.env
+
+# Local data and scratch
+mailvault/web/_nctest/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,258 @@
+/* Generated from mailvault/web/app.css by nextcloud/scope-css.mjs: do not edit */
+
+#mailvault-root{position:relative;height:100%;width:100%;overflow:hidden;font-family:var(--font);font-size:13px;color:var(--text);background:var(--bg);line-height:normal}
+#mailvault-root button,#mailvault-root input,#mailvault-root select,#mailvault-root textarea{min-height:0;min-width:0;max-height:none;height:auto;width:auto;margin:0;box-shadow:none;font:inherit;font-weight:inherit;line-height:normal;color:inherit;cursor:auto;outline-offset:0;opacity:1;filter:none}
+#mailvault-root button{background:none;border:0;border-radius:0;padding:1px 6px;text-align:center;cursor:pointer;display:inline-block}
+#mailvault-root input:not([type=checkbox]):not([type=radio]),#mailvault-root select,#mailvault-root textarea{background:#fff;border:1px solid #8a8a8a;border-radius:2px;padding:2px 4px}
+#mailvault-root input[type=checkbox],#mailvault-root input[type=radio]{appearance:auto;-webkit-appearance:auto;position:static;width:auto;height:auto;clip:auto;clip-path:none;opacity:1;margin:0 4px 0 0}
+#mailvault-root h1,#mailvault-root h2,#mailvault-root h3,#mailvault-root h4,#mailvault-root p,#mailvault-root table,#mailvault-root label,#mailvault-root ul{font-family:inherit;color:inherit;line-height:normal}
+#mailvault-root h1,#mailvault-root h2,#mailvault-root h3,#mailvault-root h4{font-weight:600}
+#mailvault-root a{color:inherit}
+#mailvault-root :focus-visible{box-shadow:none}
+#mailvault-root{--blue:#0f6cbd;--blue-d:#0c5a9e;--blue-l:#cfe4fa;--sel:#cce4f7;--hover:#e5f1fb;--line:#d6d6d6;
+--bg:#fff;--pane:#f3f3f3;--text:#262626;--muted:#666;--warn:#fff4ce;--warn-b:#e6c35c;--bad:#fde7e9;--bad-b:#e8a3aa;
+--font:"Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif}
+#mailvault-root,#mailvault-root *{box-sizing:border-box}
+#mailvault-root,#mailvault-root{margin:0;height:100%;font-family:var(--font);font-size:13px;color:var(--text);background:var(--bg);overflow:hidden}
+#mailvault-root button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#mailvault-root svg.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#mailvault-root #app{display:grid;grid-template-rows:auto auto auto auto 1fr 22px;height:100%}
+#mailvault-root #title{background:var(--blue);color:#fff;display:flex;align-items:center;height:32px;padding:0 10px;gap:10px}
+#mailvault-root #title .name{font-weight:600;letter-spacing:.2px}
+#mailvault-root #title .doc{opacity:.9;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mailvault-root #search{width:min(420px,34vw);height:24px;border:0;border-radius:3px;padding:0 8px 0 28px;font:inherit;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23555' stroke-width='1.6'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath d='M9.5 9.5 13 13'/%3E%3C/svg%3E") 8px center no-repeat}
+#mailvault-root #tabs{display:flex;background:var(--blue);padding:0 4px;gap:2px}
+#mailvault-root #tabs button{color:#fff;padding:5px 14px 6px;border-radius:3px 3px 0 0}
+#mailvault-root #tabs button:hover{background:var(--blue-d)}
+#mailvault-root #tabs button.on{background:#f3f3f3;color:var(--text)}
+#mailvault-root #tabs button.file{background:var(--blue-d);font-weight:600}
+#mailvault-root #ribbon{background:var(--pane);border-bottom:1px solid var(--line);display:flex;min-height:92px;padding:4px 4px 0;overflow-x:auto}
+#mailvault-root .grp{display:flex;flex-direction:column;border-right:1px solid var(--line);padding:0 6px}
+#mailvault-root .grp .btns{display:flex;gap:2px;flex:1;align-items:flex-start}
+#mailvault-root .grp .cap{font-size:11px;color:var(--muted);text-align:center;padding:2px 0 3px}
+#mailvault-root .big{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;border-radius:3px;min-width:54px;max-width:72px;text-align:center;line-height:1.15;border:1px solid transparent}
+#mailvault-root .big svg.i{width:30px;height:30px;stroke-width:1.3;color:var(--blue)}
+#mailvault-root .big:hover,#mailvault-root .sm:hover{background:var(--hover);border-color:var(--blue-l)}
+#mailvault-root .stack{display:flex;flex-direction:column;gap:1px}
+#mailvault-root .sm{display:flex;align-items:center;gap:6px;padding:2px 6px;border-radius:3px;white-space:nowrap;border:1px solid transparent}
+#mailvault-root .sm svg.i{color:var(--blue)}
+#mailvault-root .ribbon-sel{font:inherit;height:22px;border:1px solid var(--line);background:#fff;margin:2px 0}
+#mailvault-root #main{display:grid;grid-template-columns:var(--fw,230px) 4px var(--lw,360px) 4px 1fr;min-height:0}
+#mailvault-root .split{cursor:col-resize;background:var(--pane);border-left:1px solid var(--line)}
+#mailvault-root #folders{background:#fff;display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+#mailvault-root #tree{flex:1;overflow:auto;padding:6px 0}
+#mailvault-root .fav{font-size:11px;color:var(--muted);padding:6px 12px 2px;text-transform:uppercase;letter-spacing:.4px}
+#mailvault-root .node{display:flex;align-items:center;gap:6px;padding:3px 8px;white-space:nowrap;cursor:default;border-left:3px solid transparent}
+#mailvault-root .node:hover{background:var(--hover)}
+#mailvault-root .node.on{background:var(--sel);border-left-color:var(--blue)}
+#mailvault-root .node .tw{width:12px;text-align:center;color:var(--muted);font-size:10px}
+#mailvault-root .node .cnt{margin-left:auto;color:var(--muted);font-size:12px}
+#mailvault-root .node .cnt.unread{color:var(--blue);font-weight:600}
+#mailvault-root .node .lbl{overflow:hidden;text-overflow:ellipsis}
+#mailvault-root .node.hasunread .lbl{font-weight:600}
+#mailvault-root .node.account{font-weight:600;margin-top:8px;padding-top:5px;padding-bottom:5px}
+#mailvault-root .node.account .tw{margin-right:2px}
+#mailvault-root .node.group{margin-top:8px;color:var(--muted)}
+#mailvault-root .libsep{border-top:1px solid var(--line);margin:10px 8px 2px}
+#mailvault-root .node.store{font-weight:600;margin-top:4px}
+#mailvault-root .node.recovered,#mailvault-root .node.orphaned{color:#8a5a00}
+#mailvault-root .node .err{color:#c50f1f}
+#mailvault-root .node .x{visibility:hidden;margin-left:4px;color:var(--muted)}
+#mailvault-root .node.store:hover .x{visibility:visible}
+#mailvault-root #list{display:flex;flex-direction:column;min-height:0;background:#fff}
+#mailvault-root #listhead{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--line)}
+#mailvault-root #listhead .flt{display:flex;flex-wrap:nowrap;gap:2px;min-width:0}
+#mailvault-root #listhead .sort{white-space:nowrap}
+#mailvault-root #listhead .flt button{padding:2px 6px;border-bottom:2px solid transparent}
+#mailvault-root #listhead .flt button.on{border-bottom-color:var(--blue);color:var(--blue);font-weight:600}
+#mailvault-root #listhead .sort{margin-left:auto;color:var(--muted)}
+#mailvault-root #rows{flex:1;overflow:auto;outline:none}
+#mailvault-root .grouphdr{padding:6px 10px 3px;font-weight:600;color:var(--muted);font-size:12px;background:#fafafa;position:sticky;top:0}
+#mailvault-root .row{display:grid;grid-template-columns:4px 1fr auto;column-gap:8px;padding:6px 10px 6px 0;border-bottom:1px solid #eee;cursor:default}
+#mailvault-root .row:hover{background:var(--hover)}
+#mailvault-root .row.on{background:var(--sel)}
+#mailvault-root .row .bar{grid-row:1/3;background:transparent}
+#mailvault-root .row.unread .bar{background:var(--blue)}
+#mailvault-root .row .from{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mailvault-root .row.unread .from,#mailvault-root .row.unread .subj{font-weight:600}
+#mailvault-root .row .subj{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+#mailvault-root .row.unread .subj{color:var(--blue)}
+#mailvault-root .row .meta{grid-column:3;grid-row:1;display:flex;gap:4px;align-items:center;color:var(--muted);font-size:12px}
+#mailvault-root .row .dt{grid-column:3;grid-row:2;color:var(--muted);font-size:12px;text-align:right}
+#mailvault-root .tag{font-size:10.5px;padding:0 5px;border-radius:2px;border:1px solid}
+#mailvault-root .tag.damaged{background:var(--bad);border-color:var(--bad-b);color:#a4262c}
+#mailvault-root .tag.recovered,#mailvault-root .tag.orphaned{background:var(--warn);border-color:var(--warn-b);color:#7a5600}
+#mailvault-root .imp{color:#c50f1f;font-weight:700}
+#mailvault-root #read{overflow:auto;min-width:0;background:#fff;display:flex;flex-direction:column}
+#mailvault-root #read .empty{margin:auto;color:var(--muted);text-align:center}
+#mailvault-root .rh{padding:14px 18px 8px}
+#mailvault-root .rh h1{font-size:19px;font-weight:400;margin:0 0 12px}
+#mailvault-root .who{display:flex;gap:10px;align-items:flex-start}
+#mailvault-root .avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+#mailvault-root .who .n{font-size:14px}
+#mailvault-root .who .s{color:var(--muted);font-size:12px;margin-top:2px}
+#mailvault-root .act{margin-left:auto;display:flex;gap:2px;align-self:flex-start}
+#mailvault-root .act button{padding:4px 8px;border:1px solid var(--line);border-radius:3px;display:flex;gap:4px;align-items:center;background:#fff}
+#mailvault-root .act button:hover{background:var(--hover)}
+#mailvault-root .info{margin:8px 18px 0;padding:6px 10px;border:1px solid var(--warn-b);background:var(--warn);font-size:12px}
+#mailvault-root .info.bad{border-color:var(--bad-b);background:var(--bad)}
+#mailvault-root .info a{color:var(--blue);cursor:pointer;text-decoration:underline}
+#mailvault-root .atts{display:flex;flex-wrap:wrap;gap:6px;padding:8px 18px 0}
+#mailvault-root .att{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:3px;padding:5px 8px;max-width:260px;cursor:pointer}
+#mailvault-root .att:hover{background:var(--hover)}
+#mailvault-root .att .an{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mailvault-root .att .as{color:var(--muted);font-size:11px}
+#mailvault-root #bodyframe{flex:1;border:0;width:100%;min-height:300px;margin-top:8px;border-top:1px solid #eee}
+#mailvault-root #status{background:var(--blue);color:#fff;display:flex;align-items:center;gap:18px;padding:0 10px;font-size:12px}
+#mailvault-root #status .r{margin-left:auto}
+#mailvault-root .mask{position:fixed;inset:0;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;z-index:50}
+#mailvault-root .dlg{background:#fff;width:min(720px,94vw);max-height:86vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.3);border:1px solid #999}
+#mailvault-root .dlg .dh{padding:10px 14px;font-size:15px;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+#mailvault-root .dlg .dh button{margin-left:auto;font-size:18px;padding:0 6px}
+#mailvault-root .dlg .db{padding:12px 14px;overflow:auto}
+#mailvault-root .dlg .df{padding:10px 14px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end}
+#mailvault-root .btn{border:1px solid #8a8a8a;padding:4px 16px;border-radius:2px;background:#fdfdfd}
+#mailvault-root .btn:hover{background:var(--hover)}
+#mailvault-root .btn.pri{background:var(--blue);color:#fff;border-color:var(--blue)}
+#mailvault-root .btn.pri:hover{background:var(--blue-d)}
+#mailvault-root .fl{border:1px solid var(--line);height:320px;overflow:auto}
+#mailvault-root .fe{display:flex;gap:8px;padding:4px 8px;align-items:center;cursor:default}
+#mailvault-root .fe:hover{background:var(--hover)}
+#mailvault-root .fe.on{background:var(--sel)}
+#mailvault-root .fe .sz{margin-left:auto;color:var(--muted)}
+#mailvault-root .drop{border:2px dashed var(--blue-l);padding:18px;text-align:center;color:var(--muted);margin-top:10px}
+#mailvault-root .drop.over{background:var(--hover);border-color:var(--blue)}
+#mailvault-root table.kv{border-collapse:collapse;width:100%;font-size:12px}
+#mailvault-root table.kv td{border-bottom:1px solid #eee;padding:3px 6px;vertical-align:top}
+#mailvault-root table.kv td:first-child{color:var(--muted);white-space:nowrap;font-family:Consolas,monospace}
+#mailvault-root pre.src{font-family:Consolas,Menlo,monospace;font-size:12px;white-space:pre-wrap;margin:0}
+#mailvault-root .stats{display:flex;gap:10px;margin-bottom:12px}
+#mailvault-root .stat{background:var(--pane);padding:8px 12px;min-width:90px}
+#mailvault-root .stat b{display:block;font-size:20px;font-weight:400}
+#mailvault-root .radio{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 16px}
+#mailvault-root .radio label{display:flex;gap:6px;align-items:center}
+#mailvault-root .ctx{position:fixed;background:#fff;border:1px solid #bbb;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:60;padding:3px 0;min-width:200px}
+#mailvault-root .ctx button{display:flex;gap:8px;align-items:center;width:100%;text-align:left;padding:5px 14px}
+#mailvault-root .ctx button:hover{background:var(--hover)}
+#mailvault-root .ctx hr{border:0;border-top:1px solid #e5e5e5;margin:3px 0}
+#mailvault-root .toast{position:fixed;bottom:34px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:3px;z-index:70}
+#mailvault-root #welcome{margin:auto;text-align:center;color:var(--muted);max-width:360px}
+#mailvault-root #welcome h2{font-weight:400;color:var(--text)}
+@media (max-width:900px){#mailvault-root #main{grid-template-columns:var(--fw,180px) 4px 1fr 0 0}
+#mailvault-root #read{display:none}
+#mailvault-root #main.reading{grid-template-columns:0 0 0 0 1fr}
+#mailvault-root #main.reading #read{display:flex}
+}
+#mailvault-root #modnav{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:4px 0;background:#fff}
+#mailvault-root #modnav button{padding:6px 8px;border-radius:3px;color:var(--muted)}
+#mailvault-root #modnav button:hover{background:var(--hover)}
+#mailvault-root #modnav button.on{color:var(--blue);box-shadow:inset 0 -2px 0 var(--blue)}
+#mailvault-root #modnav svg.i{width:20px;height:20px}
+#mailvault-root #jobs:empty{padding:0;border:0}
+#mailvault-root #jobs{background:#fff;border-bottom:1px solid var(--line);padding:4px 10px;display:flex;flex-direction:column;gap:4px}
+#mailvault-root .job{display:flex;align-items:center;gap:10px;font-size:12px}
+#mailvault-root .job .pb{flex:1;max-width:420px;height:6px;background:#e6e6e6;border-radius:3px;overflow:hidden}
+#mailvault-root .job .pb i{display:block;height:100%;background:var(--blue)}
+#mailvault-root .job.err{color:#a4262c}
+#mailvault-root .job a{color:var(--blue);cursor:pointer}
+#mailvault-root .st{display:inline-flex;align-items:center;gap:2px;font-size:10.5px;padding:0 5px;border-radius:2px;background:#eef3fa;color:#0c5a9e;white-space:nowrap}
+#mailvault-root .st svg.i{width:12px;height:12px}
+#mailvault-root .st.Draft{background:#fde7e9;color:#a4262c}
+#mailvault-root .st.Deleted{background:#f3f3f3;color:#555}
+#mailvault-root .st.Archived{background:#f1f7e9;color:#3b6d11}
+#mailvault-root .st.Junk{background:#fff4ce;color:#7a5600}
+#mailvault-root .cat{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:2px;vertical-align:middle}
+#mailvault-root .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+#mailvault-root .chip{font-size:11.5px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);background:#fafafa}
+#mailvault-root .chip.c{color:#fff;border:0}
+#mailvault-root .colhdr,#mailvault-root .crow{display:grid;grid-template-columns:18px 18px minmax(120px,1.1fr) minmax(160px,2fr) 118px 70px 90px;gap:8px;padding:4px 10px;align-items:center}
+#mailvault-root .colhdr{position:sticky;top:0;background:#fafafa;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);z-index:1}
+#mailvault-root .colhdr span{cursor:pointer;white-space:nowrap}
+#mailvault-root .colhdr span:hover{color:var(--text)}
+#mailvault-root .crow{border-bottom:1px solid #f0f0f0;cursor:default;font-size:12.5px}
+#mailvault-root .crow:hover{background:var(--hover)}
+#mailvault-root .crow.on{background:var(--sel)}
+#mailvault-root .crow > *{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mailvault-root .crow.unread{font-weight:600}
+#mailvault-root .thead{font-weight:600}
+#mailvault-root .tchild{padding-left:30px !important}
+#mailvault-root .tw2{cursor:pointer;color:var(--muted);display:inline-block;width:14px}
+#mailvault-root #main.wide{grid-template-columns:var(--fw,230px) 4px 1fr 4px var(--rw,340px)}
+#mailvault-root .cal{display:flex;flex-direction:column;height:100%}
+#mailvault-root .calbar{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line)}
+#mailvault-root .calbar h3{margin:0;font-weight:400;font-size:17px}
+#mailvault-root .calbar button{padding:3px 6px;border-radius:3px}
+#mailvault-root .calbar button:hover{background:var(--hover)}
+#mailvault-root .month{flex:1;display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:1fr;min-height:420px}
+#mailvault-root .dow{font-size:11px;color:var(--muted);padding:4px 6px;border-bottom:1px solid var(--line)}
+#mailvault-root .day{border-right:1px solid #eee;border-bottom:1px solid #eee;padding:3px;overflow:hidden;min-height:78px}
+#mailvault-root .day.other{background:#fafafa;color:#aaa}
+#mailvault-root .day .n{font-size:12px;padding:1px 3px}
+#mailvault-root .day.today .n{background:var(--blue);color:#fff;border-radius:2px;display:inline-block}
+#mailvault-root .ev{font-size:11.5px;background:#cfe4fa;border-left:3px solid var(--blue);padding:1px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+#mailvault-root .ev.allday{background:var(--blue);color:#fff}
+#mailvault-root .ev.on{outline:2px solid #0c5a9e}
+#mailvault-root .ev.oof{border-left-color:#8764b8;background:#e8e0f5}
+#mailvault-root .prow{display:flex;gap:10px;align-items:center;padding:7px 10px;border-bottom:1px solid #eee;cursor:default}
+#mailvault-root .prow:hover{background:var(--hover)}
+#mailvault-root .prow.on{background:var(--sel)}
+#mailvault-root .prow .avatar{width:34px;height:34px;font-size:13px}
+#mailvault-root .prow .sub{color:var(--muted);font-size:12px}
+#mailvault-root .trow{display:grid;grid-template-columns:22px 1fr 110px 90px;gap:8px;align-items:center;padding:7px 10px;border-bottom:1px solid #eee}
+#mailvault-root .trow:hover{background:var(--hover)}
+#mailvault-root .trow.on{background:var(--sel)}
+#mailvault-root .trow.done .ts{text-decoration:line-through;color:var(--muted)}
+#mailvault-root .trow.overdue .td{color:#c50f1f}
+#mailvault-root .pct{height:5px;background:#e6e6e6;border-radius:3px}
+#mailvault-root .pct i{display:block;height:100%;background:#498205;border-radius:3px}
+#mailvault-root .notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:12px}
+#mailvault-root .ntile{min-height:120px;padding:10px;box-shadow:0 1px 3px rgba(0,0,0,.15);cursor:pointer;white-space:pre-wrap;overflow:hidden;font-size:12.5px}
+#mailvault-root .ntile.on{outline:2px solid var(--blue)}
+#mailvault-root .yellow{background:#fff7b2}
+#mailvault-root .blue{background:#cfe8ff}
+#mailvault-root .green{background:#d6f5d6}
+#mailvault-root .pink{background:#ffd6ea}
+#mailvault-root .white{background:#fff}
+#mailvault-root .card{display:flex;gap:16px;padding:18px;align-items:center}
+#mailvault-root .card .avatar{width:72px;height:72px;font-size:26px}
+#mailvault-root .card h1{font-size:22px;font-weight:400;margin:0}
+#mailvault-root .card .sub{color:var(--muted)}
+#mailvault-root table.fields{border-collapse:collapse;margin:0 18px;font-size:13px}
+#mailvault-root table.fields td{padding:4px 12px 4px 0;vertical-align:top}
+#mailvault-root table.fields td:first-child{color:var(--muted);white-space:nowrap}
+#mailvault-root .when{font-size:14px;margin:4px 0}
+#mailvault-root .bignote{margin:18px;padding:16px;min-height:200px;white-space:pre-wrap;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+#mailvault-root .pvbar{display:flex;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--line);background:#fafafa}
+#mailvault-root .pvbar .btn{padding:2px 10px}
+#mailvault-root #pvframe{flex:1;border:0;width:100%;background:#fff;min-height:400px}
+#mailvault-root .ev.allday.oof{background:#8764b8;color:#fff;border-left-color:#5c3f99}
+#mailvault-root #main.cols{--lw:min(720px,52vw)}
+#mailvault-root table.fields td:first-child{width:1%;padding-right:24px}
+#mailvault-root .ev.exc{border-left-style:dashed}
+#mailvault-root .fav .add{float:right;padding:0 4px;border-radius:3px;color:var(--blue)}
+#mailvault-root .fav .add:hover{background:var(--hover)}
+#mailvault-root .node.lib .lbl{overflow:hidden;text-overflow:ellipsis}
+#mailvault-root .node.lib.missing{color:#a4262c}
+#mailvault-root .node.libfile{color:var(--text)}
+#mailvault-root .node.libfile .sz{margin-left:auto;color:var(--muted);font-size:11px}
+#mailvault-root .node.libnote{color:var(--muted);font-size:12px;cursor:default;white-space:normal;line-height:1.35}
+#mailvault-root .lib-tabs{display:flex;gap:4px;margin-bottom:10px;border-bottom:1px solid var(--line)}
+#mailvault-root .lib-tabs button{padding:6px 12px;border-bottom:2px solid transparent}
+#mailvault-root .lib-tabs button.on{border-bottom-color:var(--blue);color:var(--blue);font-weight:600}
+#mailvault-root .frm{display:grid;grid-template-columns:120px 1fr;gap:8px 10px;align-items:center;margin-top:10px}
+#mailvault-root .frm input,#mailvault-root .frm select{font:inherit;padding:4px 6px;border:1px solid #bbb;border-radius:2px}
+#mailvault-root .hint{color:var(--muted);font-size:12px;margin:6px 0}
+#mailvault-root .invite{margin:10px 14px 4px;border:1px solid #c7dcf2;border-left:4px solid var(--blue);background:#f3f8fd;border-radius:3px}
+#mailvault-root .invite .ih{display:flex;align-items:center;gap:8px;padding:8px 10px 4px;flex-wrap:wrap}
+#mailvault-root .invite .ih .i{color:var(--blue)}
+#mailvault-root .invite .ih .sub{color:var(--muted)}
+#mailvault-root .invite .ib{margin-left:auto;display:flex;gap:6px}
+#mailvault-root .invite .fields{margin:0 4px 6px}
+#mailvault-root .invite .fields .sub{color:var(--muted);font-size:11.5px}
+#mailvault-root .invite.cancel{border-left-color:#a4262c;background:#fdf3f4}
+#mailvault-root .invite.cancel .ih b{color:#a4262c}
+#mailvault-root .ev.inv{background:#dff0e5;border-left-color:#107c41}
+#mailvault-root .ev.inv.on{outline-color:#0b5a2e}
+#mailvault-root .ev.cancel{text-decoration:line-through;opacity:.7}
+#mailvault-root .invm .i{width:13px;height:13px;color:#107c41}
+

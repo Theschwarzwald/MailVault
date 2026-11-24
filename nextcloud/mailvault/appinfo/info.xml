@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>mailvault</id>
+    <name>MailVault</name>
+    <summary>View, convert and recover PST, OST, MSG, EML and MBOX files</summary>
+    <description><![CDATA[Open Outlook data files and other mail formats straight from Files in an Outlook classic style viewer.
+Export to PDF, EML, MSG, MBOX, HTML, text or CSV, save attachments, and recover damaged, orphaned and deleted items.
+Requires the MailVault engine container (see README).]]></description>
+    <version>2.9.0</version>
+    <licence>MIT</licence>
+    <author>MailVault</author>
+    <namespace>MailVault</namespace>
+    <category>files</category>
+    <category>tools</category>
+    <dependencies>
+        <nextcloud min-version="29" max-version="35"/>
+    </dependencies>
+    <settings>
+        <admin>OCA\MailVault\Settings\Admin</admin>
+        <personal>OCA\MailVault\Settings\Personal</personal>
+        <personal-section>OCA\MailVault\Settings\PersonalSection</personal-section>
+    </settings>
+    <background-jobs>
+        <job>OCA\MailVault\BackgroundJob\ScanFolders</job>
+    </background-jobs>
+    <navigations>
+        <navigation>
+            <name>MailVault</name>
+            <route>mailvault.page.index</route>
+            <icon>app.svg</icon>
+        </navigation>
+    </navigations>
+</info>

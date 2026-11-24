@@ -1,0 +1,16 @@
+[project]
+name = "mailvault"
+version = "2.9.0"
+description = "PST, OST, MSG, EML and MBOX viewer, converter and recovery tool with an Outlook classic interface"
+requires-python = ">=3.10"
+dependencies = ["starlette>=0.37", "uvicorn>=0.29", "reportlab>=4.0"]
+
+[project.optional-dependencies]
+archives = ["py7zr>=0.21", "rarfile>=4.2"]
+desktop = ["pywebview>=5.1"]
+
+[project.scripts]
+mailvault = "mailvault.__main__:main"
+
+[tool.setuptools.package-data]
+mailvault = ["web/*"]
